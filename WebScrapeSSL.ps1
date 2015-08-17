@@ -1,7 +1,6 @@
 <#
         .AUTHOR
-            Chase Hymel
-            2015-07-22
+            DragonReb0rn
         
         .SYNOPSIS
             Scapes the SSL Labs website based on URLs from an input file, performs a delta between previous and current month, then moves files accordingly.
