@@ -103,13 +103,13 @@ foreach ($url in $urls)
         $Site = $scrape.ParsedHtml.getElementsByTagName("div") | where "classname" -match "reportTitle" | select -ExpandProperty InnerText
         $Rating = $scrape.ParsedHtml.getElementsByTagName("div") | where "classname" -like "rating_*" | select -ExpandProperty InnerText
 
-  	    #Create a new PSObject and store the scraped content from the variables in the object					                
-  	    $Entry = New-Object psobject
-            $Entry | Add-Member -memberType noteProperty -name "Site" -Value $Site
-            $Entry | Add-Member -memberType noteProperty -name "Rating" -Value $Rating
-  	    $Entry | Add-Member -memberType noteProperty -name "warningBox" -Value $warningBox
-  	    $Entry | Add-Member -memberType noteProperty -name "errorBox" -Value $errorBox
-  	    $Entry | Add-Member -memberType noteProperty -name "highlightBox" -Value $highlightBox
+	#Create a new PSObject and store the scraped content from the variables in the object					                
+  	$Entry = New-Object psobject
+        $Entry | Add-Member -memberType noteProperty -name "Site" -Value $Site
+        $Entry | Add-Member -memberType noteProperty -name "Rating" -Value $Rating
+  	$Entry | Add-Member -memberType noteProperty -name "warningBox" -Value $warningBox
+  	$Entry | Add-Member -memberType noteProperty -name "errorBox" -Value $errorBox
+  	$Entry | Add-Member -memberType noteProperty -name "highlightBox" -Value $highlightBox
     
         #Join entries with multiple values into one string in preparation for export
         $entry.warningBox = $entry.warningBox -join ';'
