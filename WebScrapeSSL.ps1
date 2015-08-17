@@ -105,8 +105,8 @@ foreach ($url in $urls)
 
 	    #Create a new PSObject and store the scraped content from the variables in the object					                
 	    $Entry = New-Object psobject
-        $Entry | Add-Member -memberType noteProperty -name "Site" -Value $Site
-        $Entry | Add-Member -memberType noteProperty -name "Rating" -Value $Rating
+            $Entry | Add-Member -memberType noteProperty -name "Site" -Value $Site
+            $Entry | Add-Member -memberType noteProperty -name "Rating" -Value $Rating
 	    $Entry | Add-Member -memberType noteProperty -name "warningBox" -Value $warningBox
 	    $Entry | Add-Member -memberType noteProperty -name "errorBox" -Value $errorBox
 	    $Entry | Add-Member -memberType noteProperty -name "highlightBox" -Value $highlightBox
